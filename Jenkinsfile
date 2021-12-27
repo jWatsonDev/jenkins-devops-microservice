@@ -14,14 +14,16 @@
 // declarative pipeline 
 pipeline {
 	agent any
-	stages('Build') {
-		steps {
-			echo "Build"
+	stages {
+		stage('Build') {
+			steps {
+				echo "Build"
+			}
 		}
-	}
-	stages('Test') {
-		steps {
-			echo "Test"
+		stage('Test') {
+			steps {
+				echo "Test"
+			}
 		}
 	}
 }
