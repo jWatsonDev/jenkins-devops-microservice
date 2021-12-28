@@ -13,7 +13,7 @@
 
 // declarative pipeline 
 pipeline {
-	agent { docker { image 'node:13.8'} }
+	agent { docker { image 'node:latest'} }
 	stages {
 		stage('Build') {
 			steps {
