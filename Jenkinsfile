@@ -23,7 +23,7 @@ pipeline {
 	}
 	
 	stages {
-		stage('Build') {
+		stage('Checkout') {
 			steps {
 				sh 'mvn --version'
 				sh 'docker version'
@@ -33,6 +33,11 @@ pipeline {
 				echo "Build ID: $env.BUILD_ID"
 				echo "Build Tag: $env.BUILD_TAG"
 				
+			}
+		}
+		stage('Build') {
+			steps {
+				echo "Build"
 			}
 		}
 		stage('Test') {
