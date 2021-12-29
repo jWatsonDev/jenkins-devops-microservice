@@ -35,14 +35,25 @@ pipeline {
 				
 			}
 		}
-		stage('Build') {
+		
+		stage('Compile') {
 			steps {
-				echo "Build"
+				echo "Compile"
+				sh "mvn clean compile"
 			}
 		}
+		
 		stage('Test') {
 			steps {
 				echo "Test"
+				sh "mvn test"
+			}
+		}
+		
+		stage('Int Test') {
+			steps {
+				echo "Int Test"
+				sh "mvn failsafe:integration-test failsafe:verify"
 			}
 		}
 	}
