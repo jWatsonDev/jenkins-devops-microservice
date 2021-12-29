@@ -78,7 +78,7 @@ pipeline {
 			steps {
 				echo "Push Docker"
 				script {
-					docker.withCredentials('', 'dockerhub') {
+					docker.withRegistry('', 'dockerhub') {
 						dockerImage.push();
 						dockerImage.push('latest');
 					}
